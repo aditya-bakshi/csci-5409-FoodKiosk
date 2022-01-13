@@ -1,15 +1,4 @@
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
-
-.app-home {
-    /* background-image: url('/assets/img/bg-burger.jpg') !important; */
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .toolbar-spacer {
-    flex: 1 1 auto;
-  }
-  /* DashboardComponent's private CSS styles */
+/* DashboardComponent's private CSS styles */
 .toolbar-spacer {
   flex: 1 1 auto;
 }
@@ -37,6 +26,7 @@ h2 {
   }
   
   a {
+    background-color: #3f525c;
     border-radius: 2px;
     padding: 1rem;
     font-size: 1.2rem;
@@ -60,6 +50,10 @@ h2 {
       width: 18%;
       box-sizing: content-box;
     }
+  }
+  
+  a:hover {
+    background-color: black;
   }
   
   .example-form {
@@ -130,5 +124,3 @@ button:disabled {
     margin-left:auto;
     margin-right:auto;  
 }
-
- 

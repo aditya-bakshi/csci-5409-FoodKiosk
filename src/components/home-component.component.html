@@ -1,0 +1,51 @@
+<div  class="mat-display-3" style = "text-align: center; padding-top: 25px; color: #e5caca;">
+ Welcome to Burger Singh
+</div>
+<mat-card width="50%">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Hello there ! Please choose your burger ! </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose Your Bun</mat-label>
+            <mat-select (selectionChange)="resetPrice()" [(value)]="selectedBun">
+              <mat-option value="wheat">Whole Wheat</mat-option>
+              <mat-option value="multiGrain">Multi-Grain </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Choose Your Patty</mat-label>
+            <mat-select (selectionChange)="resetPrice()" [(value)]="selectedPatty">
+              <mat-option value="veganPatty">Vegan</mat-option>
+              <mat-option value="chickenPatty">Chicken </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Choose Your Drink</mat-label>
+            <mat-select (selectionChange)="resetPrice()" [(value)]="selectedDrink">
+              <mat-option value="coke">Coke</mat-option>
+              <mat-option value="fanta">Fanta </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="end">
+          <button mat-raised-button color="primary" (click)="calculateBill($event)">Calculate My Bill</button>
+          <button mat-raised-button color="primary" (click)="placeOrder($event)">Confirm My Order</button>
+         
+      </mat-card-actions>
+      <mat-card-footer>
+        <div *ngIf= "isPriceCalculated" class="mat-display-1">
+          The calculated price for your order is ${{calculatedPrice}}
+        </div>
+        <div *ngIf= "isOrderConfirmed" class="mat-display-1">
+          Your order has been successfully placed and your order number is {{orderNumber}}. Please pay at the counter and collect your order.
+        </div>
+      </mat-card-footer>
+      
+   
+</mat-card>
+
+
+  
